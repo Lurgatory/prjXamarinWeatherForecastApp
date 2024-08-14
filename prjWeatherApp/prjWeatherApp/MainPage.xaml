@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:prjWeatherApp.Footer"
+             xmlns:weatherView="clr-namespace:prjWeatherApp.WeatherView"
+             xmlns:mapContentView="clr-namespace:prjWeatherApp.MapView"
+             xmlns:listContentView="clr-namespace:prjWeatherApp.ListView"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="prjWeatherApp.MainPage">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <weatherView:WeatherContentView Grid.Row="0" IsVisible="{Binding IsWeatherVisible}"/>
+
+            <mapContentView:MapContentView Grid.Row="0" IsVisible="{Binding IsMapViewVisible}"/>
+
+            <listContentView:ListContentView Grid.Row="0" IsVisible="{Binding IsListViewVisible}"/>
+            
+
+            <!--Footer-->
+            <Grid Grid.Row="1" BackgroundColor="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:FooterButtonComponent Grid.Column="0" IconSource="weather.png" LabelText="Weather" ActionCommand="{Binding WeatherCommand}"/>
+                <local:FooterButtonComponent Grid.Column="1" IconSource="map.png" LabelText="Map" ActionCommand="{Binding MapCommand}"/>
+                <local:FooterButtonComponent Grid.Column="2" IconSource="list.png" LabelText="List" ActionCommand="{Binding ListCommand}"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="prjWeatherApp.ListLocationView.ListSearchPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar TextChanged="SearchBar_TextChanged" BackgroundColor="{StaticResource SearchBarBackgroundColor}"/>
+            <CollectionView x:Name="cView" ItemsSource="{Binding MyItems}" BackgroundColor="White">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding .}" HorizontalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="CollectViewLabelTapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

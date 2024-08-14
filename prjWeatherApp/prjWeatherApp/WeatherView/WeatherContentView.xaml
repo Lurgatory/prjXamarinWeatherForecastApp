@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:prjWeatherApp.WeatherView"
+             x:Class="prjWeatherApp.WeatherView.WeatherContentView">
+    <ContentView.Content>
+        <StackLayout>
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!--Weather Main Details Component Here-->
+                <StackLayout Grid.Row="0" Orientation="Vertical" BackgroundColor="{StaticResource Primary}" Margin="0,0,0,30">
+                    <Label x:Name="lblCountry" FontSize="Medium" Margin="20,20,0,0" Style="{StaticResource PrimaryLabelWhite}"/>
+                    <Label x:Name="lblTemp" FontSize="80" HorizontalOptions="Center" Style="{StaticResource PrimaryLabelWhite}"/>
+                    <Label x:Name="lblDescription" HorizontalOptions="Center" Margin="0,0,0,20" Style="{StaticResource PrimaryLabelWhite}"/>
+                </StackLayout>
+                <!--Weather Sub Details Component Here-->
+                <StackLayout Grid.Row="1" Orientation="Vertical" BackgroundColor="Transparent" Margin="20,-100,20,100">
+                    <Frame CornerRadius="5" Margin="0,10,0,0" HeightRequest="200" Padding="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <local:WeatherSubDetailsComponent x:Name="weatherAirHumidity" Grid.Column="0" WeatherSubDetailIcon="air.png" WeatherSubDetailTitle="humidity"/>
+                            <local:WeatherSubDetailsComponent x:Name="weatherWind" Grid.Column="1" WeatherSubDetailIcon="wind.png" WeatherSubDetailTitle="Wind"/>
+                            <local:WeatherSubDetailsComponent x:Name="weatherPressure" Grid.Column="2" WeatherSubDetailIcon="pressure.png" WeatherSubDetailTitle="Pressure"/>
+                            <local:WeatherSubDetailsComponent x:Name="weatherCloudness" Grid.Column="3" WeatherSubDetailIcon="cloudy.png" WeatherSubDetailTitle="Cloudness"/> 
+                        </Grid>
+                    </Frame>
+                    <Label Text="More Detail" HorizontalOptions="End" Margin="0,0,10,0" Style="{StaticResource SecondaryLabelPurple}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnMoreDetailTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <!--3 Hours Forecast List View Here-->
+                <ListView x:Name="listView" Grid.Row="2" Margin="20,-70,20,0" SeparatorVisibility="None" RowHeight="100" IsTabStop="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <local:Weather3HoursViewCell Time="{Binding Dt_txt}" Temp="{Binding Temp}" Weather="{Binding Weather}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

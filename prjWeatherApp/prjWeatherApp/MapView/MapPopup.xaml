@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct ="http://xamarin.com/schemas/2020/toolkit"
+             Size="300,420"
+             x:Class="prjWeatherApp.MapView.MapPopup">
+    <StackLayout>
+        <Label Text="City" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+        <Label x:Name="cityName" FontSize="16" HorizontalOptions="CenterAndExpand"/>
+
+        <Label Text="Highest Temperature" FontSize="20" HorizontalOptions="CenterAndExpand" />
+        <Label x:Name="highestTempLabel" FontSize="16" HorizontalOptions="CenterAndExpand"/>
+
+        <Label Text="Lowest Temperature" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+        <Label x:Name="lowestTempLabel" FontSize="16" HorizontalOptions="CenterAndExpand"/>
+
+        <Label Text="Humidity" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+        <Label x:Name="humidityLabel" FontSize="16" HorizontalOptions="CenterAndExpand"/>
+
+        <Label Text="Wind Level" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+        <Label x:Name="windLevelLabel" FontSize="16" HorizontalOptions="CenterAndExpand"/>
+
+        <Label Text="Feels Like" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+        <Label x:Name="feelsLikeLabel" FontSize="16" HorizontalOptions="CenterAndExpand"/>
+        <Button Text="Close" Clicked="Button_Clicked"/>
+    </StackLayout>
+</xct:Popup>

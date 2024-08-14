@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:prjWeatherApp.ListLocationView"
+             x:Class="prjWeatherApp.ListView.ListContentView">
+    <ContentView.Content>
+        <StackLayout Spacing="0" BackgroundColor="{StaticResource Primary}">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="reload.png" HorizontalOptions="Start" HeightRequest="20" Margin="20">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="RefreshListView_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="search.png" HorizontalOptions="EndAndExpand" HeightRequest="20" Margin="20">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+            <ListView x:Name="lstViewCities" BackgroundColor="White" RowHeight="130" ItemSelected="lstViewCities_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:ListWeatherViewCell CityName="{Binding CityName}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

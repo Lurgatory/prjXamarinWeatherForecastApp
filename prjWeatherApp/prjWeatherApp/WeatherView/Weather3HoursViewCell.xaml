@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="prjWeatherApp.WeatherView.Weather3HoursViewCell">
+    <ViewCell.View>
+        <Frame CornerRadius="5" BackgroundColor="{StaticResource Secondary}" Padding="0" Margin="0,0,0,15">
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblTime" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Style="{StaticResource ThreeHourForecastLabel}"/>
+                <Label x:Name="lblWeather" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HeightRequest="40" Style="{StaticResource ThreeHourForecastLabel}"/>
+                <Label x:Name="lblTemp" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Style="{StaticResource ThreeHourForecastLabel}"/>
+            </StackLayout>
+        </Frame>
+    </ViewCell.View>
+</ViewCell>

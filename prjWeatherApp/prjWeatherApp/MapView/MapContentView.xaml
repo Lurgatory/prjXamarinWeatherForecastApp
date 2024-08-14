@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:map="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="prjWeatherApp.MapView.MapContentView">
+  <ContentView.Content>
+      <StackLayout>
+            <map:Map IsShowingUser="True" MapClicked="Map_MapClicked"></map:Map>
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>

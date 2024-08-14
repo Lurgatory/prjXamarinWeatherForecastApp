@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="prjWeatherApp.ListLocationView.ListWeatherViewCell">
+    <ViewCell.ContextActions>
+        <MenuItem Clicked="MenuItem_Clicked" Text="Delete" IsDestructive="True" CommandParameter="{Binding .}"/>
+    </ViewCell.ContextActions>
+    <ViewCell.View>
+        <Frame BackgroundColor="{StaticResource Primary}" Padding="40,0" CornerRadius="10" HeightRequest="200" Margin="10,20">
+            <Grid RowSpacing="0" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="lblCityName" Grid.Row="0" Grid.Column="0" FontSize="30" FontAttributes="Bold" VerticalTextAlignment="End" Style="{StaticResource PrimaryLabelWhite}"/>
+                <Label x:Name="lblTemp" Grid.Row="0" Grid.Column="1" FontSize="25" FontAttributes="Bold" VerticalTextAlignment="End" HorizontalTextAlignment="End" Style="{StaticResource PrimaryLabelWhite}"/>
+                <Label x:Name="lblHumidity" Grid.Row="1" Grid.Column="0" FontSize="15" VerticalTextAlignment="Start" Style="{StaticResource PrimaryLabelWhite}"/>
+                <Label x:Name="lblWeatherMain"  Grid.Row="1" Grid.Column="1" FontSize="15" HorizontalTextAlignment="End" Style="{StaticResource PrimaryLabelWhite}"/>
+            </Grid>
+        </Frame>
+  </ViewCell.View>
+</ViewCell>

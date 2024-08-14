@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="prjWeatherApp.WeatherView.WeatherDetailPage">
+    <ContentPage.Content>
+        <!--Please do a weather deatail page here-->
+        <StackLayout Padding="20">
+            <Label Text="City" FontSize="20" />
+            <Label x:Name="cityLabel" FontSize="16" />
+
+            <Label Text="Highest Temperature" FontSize="20" />
+            <Label x:Name="highestTempLabel" FontSize="16" />
+
+            <Label Text="Lowest Temperature" FontSize="20" />
+            <Label x:Name="lowestTempLabel" FontSize="16" />
+
+            <Label Text="Humidity" FontSize="20" />
+            <Label x:Name="humidityLabel" FontSize="16" />
+
+            <Label Text="Wind Level" FontSize="20" />
+            <Label x:Name="windLevelLabel" FontSize="16" />
+
+            <Label Text="Feels Like" FontSize="20" />
+            <Label x:Name="feelsLikeLabel" FontSize="16" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
